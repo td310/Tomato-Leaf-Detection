@@ -17,6 +17,13 @@
 - **Dataset**: PlantVillage (cleaned tomato leaf dataset)
 
 ## Training
+### Data Preparation
+- **Dataset**: The PlantVillage dataset is organized into `train` and `val` directories.
+- **Data Augmentation**: Applied to the training set to enhance generalization, including rescaling, rotation, width/height shift, zoom, and horizontal flip.
+- **Validation Data**: Only rescaled without augmentation.
+- **Image Size**: 224x224 pixels
+- **Batch Size**: 32
+
 ### Model Training
 The project trains deep learning models (DenseNet121, ResNet50, and InceptionV3) to classify tomato leaf diseases. The training process involves:
 - **Pre-trained Models**: Models are initialized with ImageNet weights and fine-tuned on the tomato leaf dataset.
@@ -27,13 +34,6 @@ The project trains deep learning models (DenseNet121, ResNet50, and InceptionV3)
 - **Optimization**: Uses the Adam optimizer with categorical cross-entropy loss and appropriate learning rate scheduling.
 - **Callbacks**: Includes checkpoints to save the best model weights, learning rate reduction on plateau, and early stopping to prevent overfitting.
 - **Output**: Trained models and weights are saved to Google Drive for later use.
-
-### Data Preparation
-- **Dataset**: The PlantVillage dataset is organized into `train` and `val` directories.
-- **Data Augmentation**: Applied to the training set to enhance generalization, including rescaling, rotation, width/height shift, zoom, and horizontal flip.
-- **Validation Data**: Only rescaled without augmentation.
-- **Image Size**: 224x224 pixels
-- **Batch Size**: 32
 
 ### GradCAM Implementation
 - **Purpose**: GradCAM visualizes the regions of input images that influence the model's predictions.
